@@ -22,3 +22,23 @@
  2，@Inject JSR-330提供的注解<br/>
  3，@Resource JSR-250提供的注解<br/>
 </p> 
+<p>
+四，基于AspectJ的AOP注解<br/>
+ 1，@Aspect 用在类上，声明一个切面<br/>
+ 2，@After 在用在方法上，声明一个建言（advice），此方法将在符合切点规则的方法执行后执行<br/>
+ 3，@Before 在用在方法上，声明一个建言（advice），此方法将在符合切点规则的方法执行前执行<br/>
+ 4，@Around 在用在方法上，声明一个建言（advice），此方法将环绕符合切点规则的方法执行<br/>
+ 5，@Pointcut 声明一个切点，切点规则指定了在哪些方法上执行建言<br/>
+</p>
+<p>
+五，声明数据库事物使用的注解
+ 1，@Transactional 声明要开启数据库事务，用在类上或方法上
+</p>
+<p>
+六，缓存相关的注解
+ 1，@Cacheable 用在方法上，声明方法的返回值需要缓存，在缓存失效之前且查询条件未变化，将直接返回缓存的数据
+ 2，@CachePut 用在方法上，声明方法的返回值需要缓存，但是每次都会执行方法，不会直接返回缓存中的数据
+ 3，@CacheEvict 用在方法上，执行方法之后（或之前beforeInvocation=true），清理指定的缓存数据
+ 4，@Caching 在方法或类上同时指定多个注解，它有三个属性：cacheable、put和evict，分别用于指定@Cacheable、@CachePut和@CacheEvict
+ 5，@CacheConfig 用在类上，用来为类里面的方法指定一个默认的cache名称，这样在使用前三个注解时，就不用写cache名称了
+</p>
